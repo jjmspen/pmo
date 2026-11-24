@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PMO — Sign up / Log in</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A0D0C}
+a{color:#5BE49B;text-decoration:none}a:hover{color:#8EF0BB}
+h1,h2{font-family:'Space Grotesk',sans-serif;margin:0;letter-spacing:-0.02em}
+p{margin:0}
+input{font:inherit}
+</style>
+<style>html{scroll-behavior:smooth}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template"><div style="background: #0A0D0C; color: #E9EEEC; font-family: Inter, sans-serif; min-height: 100vh; display: flex; flex-wrap: wrap">
+
+<aside style="flex: 1 1 520px; position: relative; overflow: hidden; min-height: 420px; background-color: #0A0D0C; background-image: linear-gradient(rgba(233,238,236,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(233,238,236,0.05) 1px, transparent 1px); background-size: 32px 32px; border-right: 1px solid #1C2321; display: flex; flex-direction: column; justify-content: space-between; padding: 40px 48px; box-sizing: border-box">
+<div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 40% 50%, rgba(10,13,12,0) 20%, rgba(10,13,12,0.9) 80%)"></div>
+<a href="index.html" aria-label="PMO home" style="position: relative; display: flex">
+<svg width="80" height="33" viewBox="0 0 264 110" role="img" aria-label="PMO logo"><polygon points="12,12 72,12 72,55 12,55" fill="#E8B931" fill-opacity="0.16"/><polygon points="196,12 234,12 252,55 234,98 196,98 178,55" fill="#4C8DFF" fill-opacity="0.16"/><g fill="none" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><polyline points="12,98 12,12 72,12 72,55 12,55" stroke="#E8B931"/><line x1="88" y1="98" x2="101" y2="12" stroke="#26A69A"/><line x1="101" y1="12" x2="124" y2="62" stroke="#26A69A"/><line x1="124" y1="62" x2="147" y2="12" stroke="#EF5350"/><line x1="147" y1="12" x2="160" y2="98" stroke="#EF5350"/><polygon points="196,12 234,12 252,55 234,98 196,98 178,55" stroke="#4C8DFF"/></g></svg>
+</a>
+<div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 440px">
+<h1 style="font-size: 44px; font-weight: 600; line-height: 1.05">Your PMO account.</h1>
+<p style="color: #A3AEA9; font-size: 17px; line-height: 1.6">One account for your plan, payments and indicator access. The TradingView username you add here is the one we grant the PMO scripts to.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px">
+<div style="display: flex; gap: 12px; align-items: center; color: #C9D1CE; font-size: 15px"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="none" stroke="#E8B931" stroke-width="2"/></svg>Access status at a glance</div>
+<div style="display: flex; gap: 12px; align-items: center; color: #C9D1CE; font-size: 15px"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="none" stroke="#4C8DFF" stroke-width="2"/></svg>Change your TradingView username any time</div>
+<div style="display: flex; gap: 12px; align-items: center; color: #C9D1CE; font-size: 15px"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="none" stroke="#C9D1CE" stroke-width="2"/></svg>Crypto payment history in one place</div>
+</div>
+</div>
+<p style="position: relative; color: #4F5A56; font-size: 13px">© 2026 [Group name]</p>
+</aside>
+
+<main style="flex: 1 1 480px; display: flex; align-items: center; justify-content: center; padding: 48px 32px; box-sizing: border-box">
+<div style="width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 28px">
+<div role="tablist" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #0F1413; border: 1px solid #1C2321; border-radius: 10px; padding: 4px">
+<button type="button" role="tab" onClick="{{toSignup}}" style="{{signupTab}}">Create account</button>
+<button type="button" role="tab" onClick="{{toLogin}}" style="{{loginTab}}">Log in</button>
+</div>
+
+<sc-if value="{{isSignup}}" hint-placeholder-val="{{ true }}">
+<form style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px"><h2 style="font-size: 26px; font-weight: 600">Create your account</h2><p style="color: #7D8984; font-size: 14px">Takes under a minute.</p></div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A3AEA9">Email<input type="email" placeholder="you@example.com" style="background: #0F1413; border: 1px solid #2A3330; border-radius: 8px; padding: 13px 14px; color: #E9EEEC; min-height: 46px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A3AEA9">Password<input type="password" placeholder="At least 10 characters" style="background: #0F1413; border: 1px solid #2A3330; border-radius: 8px; padding: 13px 14px; color: #E9EEEC; min-height: 46px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A3AEA9">TradingView username
+<span style="display: flex; gap: 8px">
+<input type="text" placeholder="e.g. trader_jane" style="flex: 1; min-width: 0; background: #0F1413; border: 1px solid #2A3330; border-radius: 8px; padding: 13px 14px; color: #E9EEEC; min-height: 46px; box-sizing: border-box; font-family: 'JetBrains Mono', monospace; font-size: 14px">
+<button type="button" onClick="{{check}}" style="background: #1C2321; color: #E9EEEC; border: 0; border-radius: 8px; padding: 0 16px; min-height: 46px; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Check</button>
+</span>
+<sc-if value="{{checked}}" hint-placeholder-val="{{ false }}"><span style="color: #26A69A; font-size: 13px">✓ Username found on TradingView</span></sc-if>
+<span style="color: #7D8984; font-size: 13px; line-height: 1.5">Must match exactly — find it under your TradingView profile. Indicator access is granted to this account.</span>
+</label>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #A3AEA9; line-height: 1.5"><input type="checkbox" style="width: 18px; height: 18px; margin: 2px 0 0; accent-color: #5BE49B">I agree to the [Terms] and understand PMO is an analysis tool, not financial advice.</label>
+<a href="dashboard.html" style="background: #5BE49B; color: #06110B; padding: 15px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 16px">Create account</a>
+</form>
+</sc-if>
+
+<sc-if value="{{isLogin}}" hint-placeholder-val="{{ false }}">
+<form style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px"><h2 style="font-size: 26px; font-weight: 600">Welcome back</h2><p style="color: #7D8984; font-size: 14px">Log in to check your access and plan.</p></div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A3AEA9">Email<input type="email" placeholder="you@example.com" style="background: #0F1413; border: 1px solid #2A3330; border-radius: 8px; padding: 13px 14px; color: #E9EEEC; min-height: 46px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A3AEA9"><span style="display: flex; justify-content: space-between">Password<a href="#" style="font-size: 13px">Forgot password?</a></span><input type="password" placeholder="Your password" style="background: #0F1413; border: 1px solid #2A3330; border-radius: 8px; padding: 13px 14px; color: #E9EEEC; min-height: 46px; box-sizing: border-box"></label>
+<a href="dashboard.html" style="background: #5BE49B; color: #06110B; padding: 15px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 16px">Log in</a>
+<p style="color: #7D8984; font-size: 14px; text-align: center">No account yet? <a href="#" onClick="{{toSignup}}">Create one</a></p>
+</form>
+</sc-if>
+</div>
+</main>
+</div></template>
+<script src="dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { mode: 'signup', checked: false }; }
+  renderVals() {
+    const tab = 'border: 0; border-radius: 7px; min-height: 44px; font: inherit; font-weight: 500; font-size: 15px; cursor: pointer; ';
+    const on = tab + 'background: #1C2321; color: #E9EEEC';
+    const off = tab + 'background: transparent; color: #7D8984';
+    const s = this.state.mode === 'signup';
+    return {
+      isSignup: s, isLogin: !s,
+      signupTab: s ? on : off, loginTab: s ? off : on,
+      toSignup: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ mode: 'signup' }); },
+      toLogin: () => this.setState({ mode: 'login' }),
+      checked: this.state.checked,
+      check: () => this.setState({ checked: true })
+    };
+  }
+}
+mountDC(Component);
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PMO — Get access</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A0D0C}
+a{color:#5BE49B;text-decoration:none}a:hover{color:#8EF0BB}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;letter-spacing:-0.02em}
+p{margin:0}
+input{font:inherit}
+</style>
+<style>html{scroll-behavior:smooth}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template"><div style="background: #0A0D0C; color: #E9EEEC; font-family: Inter, sans-serif; min-height: 100vh">
+
+<header style="border-bottom: 1px solid #1C2321">
+<nav style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="index.html" aria-label="PMO home" style="display: flex; align-items: center">
+<svg width="80" height="33" viewBox="0 0 264 110" role="img" aria-label="PMO logo">
+<polygon points="12,12 72,12 72,55 12,55" fill="#E8B931" fill-opacity="0.16"/><polygon points="196,12 234,12 252,55 234,98 196,98 178,55" fill="#4C8DFF" fill-opacity="0.16"/>
+<g fill="none" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><polyline points="12,98 12,12 72,12 72,55 12,55" stroke="#E8B931"/><line x1="88" y1="98" x2="101" y2="12" stroke="#26A69A"/><line x1="101" y1="12" x2="124" y2="62" stroke="#26A69A"/><line x1="124" y1="62" x2="147" y2="12" stroke="#EF5350"/><line x1="147" y1="12" x2="160" y2="98" stroke="#EF5350"/><polygon points="196,12 234,12 252,55 234,98 196,98 178,55" stroke="#4C8DFF"/></g>
+</svg>
+</a>
+<a href="index.html" style="color: #B4BEBA; font-size: 15px">← Back to site</a>
+</nav>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 64px 32px 96px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #5BE49B; letter-spacing: 0.08em; text-transform: uppercase">Pro access</div>
+<h1 style="font-size: 48px; font-weight: 600">Unlock the full PMO set</h1>
+<p style="color: #A3AEA9; font-size: 17px; line-height: 1.6; max-width: 560px">Pay in crypto. Once confirmed, we add your TradingView username to the invite-only Pro scripts.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 40px">
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="font-size: 20px; font-weight: 600">1. Choose your plan</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<sc-for list="{{tiers}}" as="t" hint-placeholder-count="3">
+<button type="button" onClick="{{t.pick}}" style="{{t.style}}">
+<span style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7D8984"><span>{{t.label}}</span><span style="color: #5BE49B">{{t.badge}}</span></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #E9EEEC">{{t.price}}</span>
+<span style="font-size: 14px; color: #A3AEA9">{{t.note}}</span>
+</button>
+</sc-for>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="font-size: 20px; font-weight: 600">2. Pick a coin</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{coins}}" as="c" hint-placeholder-count="5">
+<button type="button" onClick="{{c.pick}}" style="{{c.style}}">
+<span style="font-weight: 600; color: #E9EEEC">{{c.sym}}</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7D8984">{{c.net}}</span>
+</button>
+</sc-for>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="font-size: 20px; font-weight: 600">3. Send payment</h2>
+<div style="background: #0F1413; border: 1px solid #1C2321; border-radius: 16px; padding: 28px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center">
+<div style="width: 148px; height: 148px; border-radius: 12px; background: #F4F6F5; display: flex; align-items: center; justify-content: center; color: #4F5A56; font-family: 'JetBrains Mono', monospace; font-size: 12px; flex: none">[QR CODE]</div>
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; color: #7D8984">Send exactly</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600">{{amount}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #7D8984">To this {{coinSym}} address · {{coinNet}}</span>
+<div style="display: flex; gap: 8px; align-items: stretch">
+<code style="flex: 1; min-width: 0; background: #0A0D0C; border: 1px solid #2A3330; border-radius: 8px; padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #E9EEEC; overflow-wrap: anywhere">[YOUR {{coinSym}} WALLET ADDRESS]</code>
+<button type="button" onClick="{{copy}}" style="background: #1C2321; color: #E9EEEC; border: 0; border-radius: 8px; padding: 0 18px; min-height: 44px; font: inherit; font-weight: 500; cursor: pointer">{{copyLabel}}</button>
+</div>
+</div>
+<p style="font-size: 13px; color: #E2A05B; line-height: 1.5">Only send {{coinSym}} on {{coinNet}}. Funds sent on another network can't be recovered.</p>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="font-size: 20px; font-weight: 600">4. Confirm your details</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A3AEA9">TradingView username<input type="text" placeholder="e.g. trader_jane" style="background: #0F1413; border: 1px solid #2A3330; border-radius: 8px; padding: 13px 14px; color: #E9EEEC; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A3AEA9">Email<input type="email" placeholder="you@example.com" style="background: #0F1413; border: 1px solid #2A3330; border-radius: 8px; padding: 13px 14px; color: #E9EEEC; min-height: 44px; box-sizing: border-box"></label>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A3AEA9">Transaction hash<input type="text" placeholder="Paste the TX ID from your wallet" style="background: #0F1413; border: 1px solid #2A3330; border-radius: 8px; padding: 13px 14px; color: #E9EEEC; min-height: 44px; box-sizing: border-box; font-family: 'JetBrains Mono', monospace; font-size: 13px"></label>
+</div>
+</section>
+</div>
+
+<aside style="flex: 1 1 320px; background: #0F1413; border: 1px solid #1C2321; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="font-size: 20px; font-weight: 600">Order summary</h2>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #A3AEA9">Plan</span><span>{{tierLabel}}</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #A3AEA9">Pay with</span><span>{{coinSym}} · {{coinNet}}</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid #1C2321; font-weight: 600"><span>Total</span><span>{{tierPrice}}</span></div>
+</div>
+<ul style="margin: 0; padding-left: 18px; color: #A3AEA9; line-height: 1.9; font-size: 14px"><li>PMO WaveTrend + PMO Ribbon</li><li>[Third indicator]</li><li>Alerts and future updates</li></ul>
+<button type="button" onClick="{{submit}}" style="background: #5BE49B; color: #06110B; border: 0; border-radius: 8px; padding: 15px; min-height: 48px; font: inherit; font-weight: 600; font-size: 16px; cursor: pointer">{{submitLabel}}</button>
+<p style="font-size: 13px; color: #7D8984; line-height: 1.6">Access is usually granted within [X hours] of [N] network confirmations. Questions? [Contact].</p>
+</aside>
+</div>
+</main>
+</div></template>
+<script src="dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { tier: 'monthly', coin: 'USDT', copied: false, sent: false }; }
+  renderVals() {
+    const tiers = [
+      { id: 'monthly', label: 'MONTHLY', price: '[PRICE]', note: 'Billed each month', badge: '' },
+      { id: 'annual', label: 'ANNUAL', price: '[PRICE]', note: 'One payment, 12 months', badge: 'BEST VALUE' },
+      { id: 'lifetime', label: 'LIFETIME', price: '[PRICE]', note: 'Pay once, keep access', badge: '' }
+    ];
+    const coins = [
+      { sym: 'USDT', net: 'TRC20' }, { sym: 'USDC', net: 'ERC20' }, { sym: 'BTC', net: 'Bitcoin' },
+      { sym: 'ETH', net: 'Ethereum' }, { sym: 'SOL', net: 'Solana' }
+    ];
+    const base = 'text-align: left; font: inherit; cursor: pointer; border-radius: 12px; display: flex; flex-direction: column; gap: 8px; padding: 20px; background: #0F1413; ';
+    const cb = 'font: inherit; cursor: pointer; border-radius: 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 18px; min-height: 52px; background: #0F1413; ';
+    const t = tiers.find((x) => x.id === this.state.tier);
+    const c = coins.find((x) => x.sym === this.state.coin);
+    return {
+      tiers: tiers.map((x) => ({ ...x, style: base + (x.id === this.state.tier ? 'border: 1.5px solid #5BE49B' : 'border: 1px solid #2A3330'), pick: () => this.setState({ tier: x.id }) })),
+      coins: coins.map((x) => ({ ...x, style: cb + (x.sym === this.state.coin ? 'border: 1.5px solid #5BE49B' : 'border: 1px solid #2A3330'), pick: () => this.setState({ coin: x.sym }) })),
+      tierLabel: 'Pro · ' + t.label.charAt(0) + t.label.slice(1).toLowerCase(),
+      tierPrice: t.price,
+      coinSym: c.sym, coinNet: c.net,
+      amount: '[AMOUNT] ' + c.sym,
+      copyLabel: this.state.copied ? 'Copied' : 'Copy',
+      copy: () => this.setState({ copied: true }),
+      submitLabel: this.state.sent ? 'Submitted — we’ll be in touch' : 'I’ve sent payment',
+      submit: () => this.setState({ sent: true })
+    };
+  }
+}
+mountDC(Component);
+</script>
+</body>
+</html>
